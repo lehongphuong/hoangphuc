@@ -9,7 +9,7 @@ import { AgmCoreModule } from '@agm/core';
 import { TripcarService } from './api/tripcar.service';
 
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
- 
+
 
 // import { ReactiveFormsModule } from '@angular/forms'; 
 
@@ -42,6 +42,10 @@ import { ToastrModule } from 'ngx-toastr';
 
 
 import { ReactiveFormsModule } from '@angular/forms';
+
+////with angular less than 5.1
+//https://stackoverflow.com/questions/43535048/angular-2-routing-does-not-work-when-deployed-to-http-server
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 //https://www.npmjs.com/package/ngx-cookie-service
@@ -134,6 +138,9 @@ import { ThueXeDamCuoiDaNangQuangNgaiComponent } from './view/content/trip/thue-
     TripcarService,
     CookieService,
     SearchService,
+    //with angular less than 5.1
+    // { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]

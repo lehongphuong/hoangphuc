@@ -30,7 +30,7 @@ export class CarComponent implements OnInit {
   phone: number;
   numberChair: number;
 
-  param = "https://smtpjs.com/smtp.aspx?From=trungmapdit14@gmail.com&to=helloitpdu@gmail.com&Subject=khách%20đặt%20xe%20anh%20phúc%20ơi&Body=";
+  param = "https://smtpjs.com/smtp.aspx?From=trungmapdit14@gmail.com&to=hoangphuccardanang@gmail.com&Subject=khách%20đặt%20xe%20anh%20phúc%20ơi&Body=";
   param1 = "&Host=smtp.elasticemail.com&Username=c4c10941-3672-467c-85e6-b1155d509797&Password=85854bab-116f-4b3b-870c-caea5bdda2c5&Action=Send&cachebuster=64533";
   content: string;
 

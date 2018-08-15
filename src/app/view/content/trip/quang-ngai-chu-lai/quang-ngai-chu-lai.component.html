@@ -1,3 +1,98 @@
-<p>
-  quang-ngai-chu-lai works!
-</p>
+<div class="container">
+  <!--Table-->
+
+
+  <h4 class="font-weight-bold">BẢNG GIÁ THUÊ XE QUẢNG NGÃI - CHU LAI CỦA CHÚNG TÔI</h4>
+  <p class="text-sm">(Bảng giá dưới đã bao gồm phí và thuế VAT)</p>
+  <p class="text-sm">Bảng giá dưới áp dụng cho
+    <b class="red-text">ĐƯA ĐÓN TẬN NƠI</b>
+  </p>
+  <p class="text-sm">
+    <B class="red-text">GIÁ THUÊ XE</B> của chúng tôi là
+    <b class="green-text">RẺ HƠN NHIỀU</b> so với các công ty vận tải khác và
+    <b class="blue-text">CÁC XE ĐIỀU LÀ ĐỜI MỚI</b>
+  </p>
+
+  <br>
+
+  <blockquote class="blockquote bq-success">
+    <h4 class='green-text'>Xe 4 Chỗ có giá 400.000 VND/1 Chiều và 800.000 VND/2 Chiều.</h4>
+    <h4 class='red-text'>Xe 7 Chỗ có giá 470.000 VND/1 Chiều và 940.000 VND/2 Chiều.</h4>
+    <h4 class='blue-text'>Xe 16 Chỗ có giá 750.000 VND/1 Chiều và 1500.000 VND/2 Chiều.</h4>
+    <h4 class='orange-text'>Xe 30 Chỗ có giá 1300.000 VND/1 Chiều và 2600.000 VND/2 Chiều.</h4>
+
+
+
+  </blockquote>
+
+  <center>
+    <span class="text-lg">Quý khách có thể
+      <b>GỌI NGAY</b> cho chúng tôi hoặc</span>
+    <br>
+    <button (click)="loginModal.show()" type="button" class="btn btn-outline-danger btn-lg" mdbWavesEffect>ĐẶT XE</button>
+  </center>
+
+</div>
+<hr>
+
+
+
+
+<!--Modal: Login Form-->
+<div mdbModal #loginModal="mdb-modal" class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Header-->
+      <div class="modal-header light-blue darken-3 white-text">
+        <h4 class="title">
+          <i class="fa fa-user"></i> Đăng Ký Xe</h4>
+        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="loginModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+        <div class="md-form form-sm">
+          <i class="fa fa-user prefix"></i>
+          <input mdbInputDirective type="text" id="form30" class="form-control" placeholder="Nhập Tên của bạn:" [(ngModel)]="username">
+        </div>
+
+        <div class="md-form form-sm">
+          <i class="fa fa-phone prefix"></i>
+          <input mdbInputDirective type="number" id="form31" class="form-control" placeholder="Nhập số điện thoại:" [(ngModel)]="phone">
+        </div>
+
+        <div class="md-form form-sm">
+          <i class="fa fa-rocket prefix"></i>
+          <input mdbInputDirective type="text" id="form31" class="form-control" placeholder="Nơi đi -> Nơi đến:" [(ngModel)]="address">
+        </div>
+
+        <div class="md-form form-sm">
+          <i class="fa fa-bus prefix"></i>
+          <input mdbInputDirective type="number" id="form31" class="form-control" placeholder="Nhập số chỗ ngồi:" [(ngModel)]="numberChair">
+        </div>
+
+        <div class="text-center mt-2">
+          <button (click)="logIn()" class="btn btn-info btn-sm waves-light" mdbWavesEffect>Đăng Ký
+            <i class="fa fa-sign-in ml-1"></i>
+          </button>
+        </div>
+
+      </div>
+      <!--Footer-->
+      <div class="modal-footer">
+        <div class="options text-center text-md-left mt-1">
+          <p class="text-sm">Chúng tôi sẽ liên hệ bạn trong thời gian sớm nhất.</p>
+
+        </div>
+        <button type="button" class="btn btn-outline-info btn-sm ml-auto" data-dismiss="modal" (click)="loginModal.hide()" mdbWavesEffect>Thoát</button>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+
+<!--Modal: Login Form-->

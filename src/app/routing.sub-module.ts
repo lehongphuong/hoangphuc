@@ -14,9 +14,11 @@ import { QuangNgaiQuyNhonComponent } from "./view/content/trip/quang-ngai-quy-nh
 import { QuangNgaiSaKyComponent } from "./view/content/trip/quang-ngai-sa-ky/quang-ngai-sa-ky.component";
 import { TamKySaKyComponent } from "./view/content/trip/tam-ky-sa-ky/tam-ky-sa-ky.component";
 import { ThueXeDamCuoiDaNangQuangNgaiComponent } from "./view/content/trip/thue-xe-dam-cuoi-da-nang-quang-ngai/thue-xe-dam-cuoi-da-nang-quang-ngai.component";
+import { ThueXeTuLaiDaNangQuangNgaiComponent } from "./view/content/trip/thue-xe-tu-lai-da-nang-quang-ngai/thue-xe-tu-lai-da-nang-quang-ngai.component";
+import { TableComponent } from "./view/content/table/table.component";
 
 const appRoutes: Routes = [
-    // { path: '', component: HomeComponent }, 
+    { path: '', component: TableComponent }, 
     { path: 'cho-thue-xe-chu-lai-sa-ky-gia-re', component: ChuLaiSaKyComponent },
     { path: 'cho-thue-xe-da-nang-quang-ngai-gia-re', component: DaNangQuangNgaiComponent },
     { path: 'cho-thue-xe-da-nang-sa-ky-gia-re', component: DaNangSaKyComponent },
@@ -27,8 +29,8 @@ const appRoutes: Routes = [
     { path: 'cho-thue-xe-quang-ngai-sa-ky-gia-re', component: QuangNgaiSaKyComponent },
     { path: 'cho-thue-xe-tam-ky-sa-ky-gia-re', component: TamKySaKyComponent },
     { path: 'cho-thue-xe-dam-cuoi-da-nang-quang-ngai-gia-re', component: ThueXeDamCuoiDaNangQuangNgaiComponent },
-    { path: 'cho-thue-xe-tu-lai-da-nang-quang-ngai-gia-re', component: ChuLaiSaKyComponent },
-  
+    { path: 'cho-thue-xe-tu-lai-da-nang-quang-ngai-gia-re', component: ThueXeTuLaiDaNangQuangNgaiComponent },
+
     { path: 'trang-chu', component: HomeComponent },
     { path: 'gioi-thieu', component: GioithieuComponent },
     { path: 'huong-dan', component: HuongdanComponent },
@@ -40,9 +42,16 @@ const appRoutes: Routes = [
     imports: [
         RouterModule.forRoot(
             appRoutes,
-            { enableTracing: true } // <-- debugging purposes only
+            {
+                enableTracing: true,
+                onSameUrlNavigation : 'reload',
+                // preloadingStrategy: PreloadAllModules,
+                // preloadingStrategy: SelectivePreloadingStrategy,
+
+            }, // <-- debugging purposes only 
         )
         // other imports here
+        // RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'})
     ],
     exports: [
         RouterModule
